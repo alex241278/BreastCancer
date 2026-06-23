@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or the accompanying data, please cite the software/repository and the Zenodo dataset."
-title: "BreastGNN self-contained reproducibility package"
+title: "InterGATE self-contained reproducibility package"
 authors:
   - family-names: "Meca"
     given-names: "Alejandro"
