@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "intergate"
 version = "1.0.0"
-description = "Self-contained InterGATE pipeline for breast cancer molecular subtype classification with interpretable graph learning."
+description = "Self-contained InterGATE pipeline for supervised sparse interactome learning in transcriptomic classification."
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 authors = [
@@ -51,4 +51,4 @@ all = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["breastgnn*"]
+include = ["intergate*"]

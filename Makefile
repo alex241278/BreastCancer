@@ -16,4 +16,4 @@ notebooks:
 	bash scripts/run_notebooks.sh
 
 clean:
-	rm -rf __pycache__ breastgnn/__pycache__ .pytest_cache
+	rm -rf __pycache__ intergate/__pycache__ .pytest_cache

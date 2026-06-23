@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="assets/Abstract.png" alt="BreastGNN graphical abstract" width="100%">
+  <img src="assets/Abstract.png" alt="InterGATE graphical abstract" width="100%">
 </p>
 
+# InterGATE — supervised sparse interactome learning
 
-# [InterGATE - supervised sparse interactome learning]
 [![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
 [![Materials License: CC BY 4.0](https://img.shields.io/badge/Materials%20License-CC%20BY%204.0-lightgrey.svg)](LICENSE-CC-BY-4.0.md)
 
-InterGATE is a modular graph neural network pipeline for molecular subtype classification in breast cancer using expression data and prior biological graphs. 
+InterGATE is a modular graph neural network pipeline for supervised learning of sparse, stable and interpretable task-specific subnetworks from transcriptomic data and prior biological interaction graphs. The repository includes the breast cancer subtype classification case study described in the manuscript.
 
 The data source configured for this package is:
 
@@ -85,7 +85,7 @@ data/external/HuRI.tsv
 data/external/HuRI.psi
 ```
 
-If these files are absent, `breastgnn.graph` can still try to download OmniPath and HuRI resources during graph construction. Keeping local copies is preferable for offline and reproducible reruns.
+If these files are absent, `intergate.graph` can still try to download OmniPath and HuRI resources during graph construction. Keeping local copies is preferable for offline and reproducible reruns.
 
 ## Useful commands
 
@@ -103,13 +103,13 @@ make clean       # remove Python caches
 All important paths can be overridden without editing code:
 
 ```bash
-export BREASTGNN_DATA_DIR=/path/to/processed_data
-export BREASTGNN_EXPR_CSV=/path/to/expr_combat_corrected.csv
-export BREASTGNN_META_CSV=/path/to/metadata_combined.csv
-export BREASTGNN_RAW_DATA_DIR=/path/to/raw_zenodo_files
-export BREASTGNN_EXTERNAL_DATA_DIR=/path/to/external_graph_files
-export BREASTGNN_CACHE_ROOT=/path/to/cache
-export BREASTGNN_ARTIFACTS_ROOT=/path/to/artifacts_ablation
+export INTERGATE_DATA_DIR=/path/to/processed_data
+export INTERGATE_EXPR_CSV=/path/to/expr_combat_corrected.csv
+export INTERGATE_META_CSV=/path/to/metadata_combined.csv
+export INTERGATE_RAW_DATA_DIR=/path/to/raw_zenodo_files
+export INTERGATE_EXTERNAL_DATA_DIR=/path/to/external_graph_files
+export INTERGATE_CACHE_ROOT=/path/to/cache
+export INTERGATE_ARTIFACTS_ROOT=/path/to/artifacts_ablation
 ```
 
 ## Validation checklist
