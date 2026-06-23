@@ -1,4 +1,4 @@
-name: breastgnn
+name: intergate
 channels:
   - pytorch
   - nvidia
