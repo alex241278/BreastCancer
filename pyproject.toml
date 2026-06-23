@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "breastgnn"
+name = "intergate"
 version = "1.0.0"
-description = "Self-contained BreastGNN pipeline for breast cancer molecular subtype classification with interpretable graph learning."
+description = "Self-contained InterGATE pipeline for breast cancer molecular subtype classification with interpretable graph learning."
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 authors = [
