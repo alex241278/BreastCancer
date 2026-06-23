@@ -24,9 +24,9 @@ is licensed separately under the MIT License; see `LICENSE`.
 
 ## Suggested attribution
 
-GraphSim-BC: graph-structured transcriptomic simulation and explanation
-auditing benchmark. Alejandro Álvaro-Meca and contributors, 2026.
-Licensed under CC BY 4.0.
+BreastGNN: a reproducible problem-solving protocol for supervised sparse
+interactome learning in breast cancer transcriptomics. Alejandro Álvaro-Meca
+and contributors, 2026. Licensed under CC BY 4.0.
 
 ## Full license text
 

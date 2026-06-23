@@ -19,6 +19,7 @@ dependencies:
   - pillow
   - jupyterlab
   - ipykernel
+  - nbconvert
   - pytorch
   - pytorch-cuda=12.4
   - pyg

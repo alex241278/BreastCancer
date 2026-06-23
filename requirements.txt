@@ -26,3 +26,5 @@ gprofiler-official>=1.0
 gseapy>=1.1
 jupyterlab>=4.0
 ipykernel>=6.0
+
+nbconvert>=7.0

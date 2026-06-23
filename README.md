@@ -1,12 +1,4 @@
-<p align="center">
-  <img src="assets/Abstract.png" alt="BreastGNN graphical abstract" width="100%">
-</p>
-
-# BreastGNN 
-
-[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
-[![Materials License: CC BY 4.0](https://img.shields.io/badge/Materials%20License-CC%20BY%204.0-lightgrey.svg)](LICENSE-CC-BY-4.0.md)
-
+# BreastGNN — self-contained reproducibility package
 
 BreastGNN is a modular graph neural network pipeline for molecular subtype classification in breast cancer using expression data and prior biological graphs. 
 
@@ -35,6 +27,8 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install -e ".[all]"
 ```
+
+Use Python 3.10 or 3.11. The package metadata intentionally excludes Python 3.13 because several scientific and graph-learning dependencies may not yet provide stable wheels for that version.
 
 For GPU runs, install the PyTorch and PyTorch Geometric builds that match your CUDA version before running the notebooks.
 
@@ -92,6 +86,7 @@ If these files are absent, `breastgnn.graph` can still try to download OmniPath 
 make install     # pip install -e .[all]
 make data        # download/extract Zenodo data
 make check       # verify required local layout
+make smoke       # import package modules and check notebook metadata
 make notebooks   # execute notebooks in order
 make clean       # remove Python caches
 ```
@@ -110,6 +105,29 @@ export BREASTGNN_CACHE_ROOT=/path/to/cache
 export BREASTGNN_ARTIFACTS_ROOT=/path/to/artifacts_ablation
 ```
 
+## Main code changes relative to the previous package
+
+1. `breastgnn/config.py` now resolves all paths from the repository root and stores caches/artifacts locally.
+2. `scripts/download_zenodo_data.py` downloads files from Zenodo record `19476488`, verifies MD5 checksums when available, extracts archives and prepares the expected data layout.
+3. `scripts/00_check_setup.py` validates that the required processed CSV files exist before running notebooks.
+4. `breastgnn/data.py` now raises a clear `FileNotFoundError` with setup instructions if required input files are missing.
+5. `breastgnn/graph_cache.py` uses `CFG.PIPELINE_CACHE_DIR` rather than creating a cache inside the processed-data directory.
+6. `breastgnn/benchmarks.py` now auto-registers package-level objects needed by fixed-prior controls, so notebooks 5 and 6 no longer fail because `make_prior_for_cfg` or `AblationConfig` were not passed manually.
+7. Notebooks 5 and 6 explicitly register `make_prior_for_cfg` and `AblationConfig` in the benchmark runtime.
+8. All notebooks were cleared of previous outputs and absolute local paths.
+
+
+## Validation checklist
+
+Before launching the full workflow, run:
+
+```bash
+python scripts/01_smoke_test.py
+python scripts/00_check_setup.py
+```
+
+The smoke test checks that core package modules import correctly and that notebooks do not contain stored outputs, execution counts, or obvious absolute local paths. The setup check verifies that the required processed CSV files are available.
+
 ## Reproducibility notes
 
 The package follows standard computational reproducibility practices: relative paths, explicit environment files, stable data DOI, checksum manifest, notebook execution order and local cache/artifact directories. The file `REFERENCES.bib` includes methodological and software references relevant to FAIR/reproducible workflows, HuRI, OmniPath, PyTorch and PyTorch Geometric.
@@ -122,4 +140,4 @@ Use the Zenodo DOI for the data:
 10.5281/zenodo.19476488
 ```
 
-A software citation stub is provided in `CITATION.cff`. Replace the placeholder repository URL before publishing the repository.
+A software citation file is provided in `CITATION.cff` and points to the public repository URL.

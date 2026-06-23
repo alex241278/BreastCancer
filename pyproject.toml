@@ -38,14 +38,16 @@ benchmarks = [
 ]
 notebooks = [
   "jupyterlab>=4.0",
-  "ipykernel>=6.0"
+  "ipykernel>=6.0",
+  "nbconvert>=7.0"
 ]
 all = [
   "xgboost>=2.0",
   "catboost>=1.2",
   "lightgbm>=4.0",
   "jupyterlab>=4.0",
-  "ipykernel>=6.0"
+  "ipykernel>=6.0",
+  "nbconvert>=7.0"
 ]
 
 [tool.setuptools.packages.find]
