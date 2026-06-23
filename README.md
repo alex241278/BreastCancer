@@ -1,4 +1,12 @@
+<p align="center">
+  <img src="assets/Abstract.png" alt="BreastGNN graphical abstract" width="100%">
+</p>
+
 # BreastGNN 
+
+[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
+[![Materials License: CC BY 4.0](https://img.shields.io/badge/Materials%20License-CC%20BY%204.0-lightgrey.svg)](LICENSE-CC-BY-4.0.md)
+
 
 BreastGNN is a modular graph neural network pipeline for molecular subtype classification in breast cancer using expression data and prior biological graphs. 
 
