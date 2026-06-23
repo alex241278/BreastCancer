@@ -3,7 +3,7 @@
 </p>
 
 
-# BreastGNN  
+# [InterGATE - supervised sparse interactome learning]
 [![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
 [![Materials License: CC BY 4.0](https://img.shields.io/badge/Materials%20License-CC%20BY%204.0-lightgrey.svg)](LICENSE-CC-BY-4.0.md)
 
