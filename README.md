@@ -7,7 +7,7 @@
 [![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
 [![Materials License: CC BY 4.0](https://img.shields.io/badge/Materials%20License-CC%20BY%204.0-lightgrey.svg)](LICENSE-CC-BY-4.0.md)
 
-BreastGNN is a modular graph neural network pipeline for molecular subtype classification in breast cancer using expression data and prior biological graphs. 
+InterGATE is a modular graph neural network pipeline for molecular subtype classification in breast cancer using expression data and prior biological graphs. 
 
 The data source configured for this package is:
 
@@ -22,7 +22,7 @@ Create the environment:
 
 ```bash
 conda env create -f environment.yml
-conda activate breastgnn
+conda activate intergate
 pip install -e ".[all]"
 ```
 
