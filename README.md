@@ -1,4 +1,4 @@
-# BreastGNN — self-contained reproducibility package
+# BreastGNN 
 
 BreastGNN is a modular graph neural network pipeline for molecular subtype classification in breast cancer using expression data and prior biological graphs. 
 
