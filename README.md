@@ -102,17 +102,6 @@ export BREASTGNN_CACHE_ROOT=/path/to/cache
 export BREASTGNN_ARTIFACTS_ROOT=/path/to/artifacts_ablation
 ```
 
-## Main code changes relative to the previous package
-
-1. `breastgnn/config.py` now resolves all paths from the repository root and stores caches/artifacts locally.
-2. `scripts/download_zenodo_data.py` downloads files from Zenodo record `19476488`, verifies MD5 checksums when available, extracts archives and prepares the expected data layout.
-3. `scripts/00_check_setup.py` validates that the required processed CSV files exist before running notebooks.
-4. `breastgnn/data.py` now raises a clear `FileNotFoundError` with setup instructions if required input files are missing.
-5. `breastgnn/graph_cache.py` uses `CFG.PIPELINE_CACHE_DIR` rather than creating a cache inside the processed-data directory.
-6. `breastgnn/benchmarks.py` now auto-registers package-level objects needed by fixed-prior controls, so notebooks 5 and 6 no longer fail because `make_prior_for_cfg` or `AblationConfig` were not passed manually.
-7. Notebooks 5 and 6 explicitly register `make_prior_for_cfg` and `AblationConfig` in the benchmark runtime.
-8. All notebooks were cleared of previous outputs and absolute local paths.
-
 ## Reproducibility notes
 
 The package follows standard computational reproducibility practices: relative paths, explicit environment files, stable data DOI, checksum manifest, notebook execution order and local cache/artifact directories. The file `REFERENCES.bib` includes methodological and software references relevant to FAIR/reproducible workflows, HuRI, OmniPath, PyTorch and PyTorch Geometric.
